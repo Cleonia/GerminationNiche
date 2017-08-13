@@ -1,4 +1,7 @@
-setwd("~/Desktop/20170424 desktop stuff/NASSTEC SESIL 2A/Obj 2 SF NASSTEC Germination Niche/Obj 2 data/germination analysis files")
+setwd("~/Desktop/NASSTEC SESIL 2A/Obj 2 SF NASSTEC Germination Niche/Obj 2 data/germination analysis files")
+# Install and load the necessary packages
+install.packages("effects")
+install.packages("binom")
 library(effects)
 library(binom)
 # Read the dataset
