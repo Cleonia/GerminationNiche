@@ -1,10 +1,20 @@
-setwd("~/Desktop/20170424 desktop stuff/NASSTEC SESIL 2A/Obj 2 SF NASSTEC Germination Niche/Obj 2 data/germination analysis files")
-# Load the libraries
+setwd("~/Desktop/NASSTEC SESIL 2A/Obj 2 SF NASSTEC Germination Niche/Obj 2 data/germination analysis files")
+# Install and load the necessary packages
+
+install.packages("binom")
+install.packages("car")
+install.packages("effects")
+install.packages("MASS")
+install.packages("plyr")
+
+library(binom)
 library(car)
 library(effects)
 library(MASS)
 library(plyr)
-library(binom)
+
+
+
 
 # Read the table
 proportions <-read.table("proportionsT.txt", header=T)
