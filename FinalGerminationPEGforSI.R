@@ -1,3 +1,9 @@
+setwd("~/Desktop/NASSTEC SESIL 2A/Obj 2 SF NASSTEC Germination Niche/Obj 2 data/germination analysis files")
+# Install and load the necessary packages
+install.packages("effects")
+install.packages("binom")
+library(effects)
+library ("binom")
 # Read the dataset
 proportionsPEG <- read.table("proportionsPEG.txt", header = T)
 # Go through the data, seed population by seed population. Species names are abbreviated with the first two letters each of the genus and specific epithet. Anthemis cotula = ANCO.
@@ -7,7 +13,7 @@ proportionsPEG <- read.table("proportionsPEG.txt", header = T)
 ANCO<-subset(proportionsPEG,Species == "ANCO")
 # Define the generalized linear model (full model)
 ANCOm1<-glm(cbind(ANCO$Germinated,ANCO$Germinable - ANCO$Germinated) ~  MPa, data = ANCO, family=binomial) #we set up the germinated and not germinated as the response variable
-library(effects)
+
 summary(ANCOm1) 
 data.frame(Effect(c("MPa"),ANCOm1)$x, 
            Est.=plogis(Effect(c("MPa"),ANCOm1)$fit), lower=plogis(Effect(c("MPa"),ANCOm1)$lower), 
